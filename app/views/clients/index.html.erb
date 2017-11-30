@@ -2,21 +2,20 @@
 
 <h1>Clients</h1>
 
-<table>
+<table class="table  table-dark table-striped table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th class="mainHead" scope="col">Client List</th>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody >
     <% @clients.each do |client| %>
-      <tr>
+      <tr scope="row">
         <td><%= client.name %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="tableEdit"><%= link_to 'Edit', edit_client_path(client) %></td>
+        <td class="tableDel"><%= link_to 'Delete', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
